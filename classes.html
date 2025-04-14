@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100px, initial-scale=1.0">
+    <title>kilo 141</title>
+    <link rel="shortcut icon" href="nyrhoz.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <h1>Classes Méta Warzone</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="réseaux.html">réseaux</a></li>
+            </ul>
+    </header>
+
+    <main id="classesContainer"></main>
+
+    <script src="script.js"></script>
+    <script>
+        // Example data for classes
+        const classes = [
+            {
+                name: "Kilo 141",
+                description: "bon fusil d'assaut avec très peu de recul.",
+                image: "kilo.jpg",
+                attachments: ["canon long", "chargeur étendu II", "silencieux monolithique", "volzhskiy reflex", "poignée avant verticale"]
+            },
+            { 
+                name: "AK-74",
+                description: "bon fusil d'assaut pour remplacer les smg.",
+                image: "ak-74.jpg",
+                attachments: ["compensator", "chargeur étendu I", "poignée ergonomique", "poignée avant de ranger", "crosse équilibrée"]
+            },
+            { 
+                name: "HDR",
+                description: "one shot sur toute les distances.",
+                image: "hdr.jpg",
+                attachments: ["canon rainuré", "chargeur rapide I", "silencieux monolithique", "munitions haute pression 108 MM", "crosse de combat"]
+            },
+            {
+                name: "CR-56 AMAX",
+                description: "bon fusil d'assaut mais un peu plus de recul que la kilo 141.",
+                image: "cr-56 amax.jpg",
+                attachments: ["munition haute pression 7,62x39 MM", "canon renforcé", "chargeur étendu II", "compensateur", "poignée avant verticale"]
+            }
+            
+            
+        ];
+
+        // Function to display classes
+        function displayClasses() {
+            const container = document.getElementById('classesContainer');
+            classes.forEach(cls => {
+                const classDiv = document.createElement('div');
+                classDiv.className = 'class';
+                classDiv.innerHTML = `
+                    <h2>${cls.name}</h2>
+                    <img src="${cls.image}" alt="${cls.name}">
+                    <p>${cls.description}</p>
+                    <h3>Attachments:</h3>
+                    <ul>${cls.attachments.map(att => `<li>${att}</li>`).join('')}</ul>
+                `;
+                container.appendChild(classDiv);
+            });
+        }
+
+        // Call the function to display classes
+        displayClasses();
+    </script>
+</body>
+</html>

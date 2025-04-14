@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100px, initial-scale=1.0">
+    <title>kilo 141</title>
+    <link rel="shortcut icon" href="nyrhoz.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <h1>Classes Méta Warzone</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="réseaux.html">réseaux</a></li>
+            </ul>
+       
+    </header>
+    <script src="script.js"></script>
+
+    <main id="classesContainer"></main>
+
+    <script src="script.js"></script>
+    <script>
+        // Example data for classes
+        const classes = [
+            {
+                name: "nyrhoz",
+                image: "nyrhoz.jpg", widht : "1000px", height : "1000px",
+                description: "vous trouverez tout mes réseaux sociaux ici.",
+                attachments: [
+                    '<a href="https://twitch.tv/nyrhoz_">Twitch</a>',
+                    '<a href="https://www.tiktok.com/@nyrhoz_?_t=ZN-8vVQRiCcntm&_r=1">TikTok</a>',
+                    '<a href="https://youtube.com/@b_2_n_2?si=sFfE4obugNOxJwpq">YouTube</a>',
+                    'My Discord: nyrhoz.'
+                ]
+            },
+        ];
+        // Function to display classes
+        function displayClasses() {
+            const container = document.getElementById('classesContainer');
+            classes.forEach(cls => {
+                const classDiv = document.createElement('div');
+                classDiv.className = 'class';
+                classDiv.innerHTML = `
+                    <h2>${cls.name}</h2>
+                    <img src="${cls.image}" alt="${cls.name}">
+                    <p>${cls.description}</p>
+                    <h3>Attachments:</h3>
+                    <ul>${cls.attachments.map(att => `<li>${att}</li>`).join('')}</ul>
+                `;
+                container.appendChild(classDiv);
+            });
+        }
+        // Call the function to display classes
+        displayClasses();
+    </script>
+</body>
+</html>
